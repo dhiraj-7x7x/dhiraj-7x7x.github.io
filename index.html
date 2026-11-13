@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight-library" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhiraj Shah — Computer Engineering &amp; AI/ML Portfolio | TU IOE, Nepal</title>
+
+  <!-- Google Fonts: Playfair Display, Lora, Inter, and JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            editorial: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ==========================================================================
+       1. FOUR CURATED AESTHETIC THEMES ("MIDNIGHT LIBRARY" DEFAULT)
+       ========================================================================== */
+    :root,
+    [data-theme="midnight-library"] {
+      --bg-primary: #14151A;
+      --bg-secondary: #191B22;
+      --bg-card: #1D1F27;
+      --bg-card-hover: #242731;
+      --bg-glass: rgba(20, 21, 26, 0.86);
+      --text-primary: #F4F1EA;
+      --text-secondary: #C4C1B8;
+      --text-muted: #8E8C86;
+      --accent-primary: #EBB85C;
+      --accent-primary-hover: #F6C870;
+      --accent-secondary: #A68246;
+      --accent-tertiary: #8FBC94;
+      --accent-contrast: #14151A;
+      --border-subtle: #2E313D;
+      --border-glow: rgba(235, 184, 92, 0.55);
+      --badge-bg: rgba(235, 184, 92, 0.12);
+      --spotlight: rgba(235, 184, 92, 0.11);
+      --hero-aura: radial-gradient(ellipse 65% 55% at 50% 42%, rgba(235, 184, 92, 0.11) 0%, rgba(20, 21, 26, 0) 75%);
+      --shadow-card: 0 22px 48px -16px rgba(0, 0, 0, 0.72);
+      --canvas-node: #EBB85C;
+      --canvas-node-alt: #F4F1EA;
+      --canvas-link: 235, 184, 92;
+      --radar-fill: rgba(235, 184, 92, 0.20);
+      --radar-stroke: #EBB85C;
+      --radar-target: #8FBC94;
+    }
+
+    [data-theme="midnight-cyber"] {
+      --bg-primary: #0B0F17;
+      --bg-secondary: #0F1520;
+      --bg-card: #131A26;
+      --bg-card-hover: #192232;
+      --bg-glass: rgba(11, 15, 23, 0.86);
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #7D8DA3;
+      --accent-primary: #38BDF8;
+      --accent-primary-hover: #60CCF9;
+      --accent-secondary: #34D399;
+      --accent-tertiary: #818CF8;
+      --accent-contrast: #0B0F17;
+      --border-subtle: #1E293B;
+      --border-glow: rgba(56, 189, 248, 0.52);
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --spotlight: rgba(56, 189, 248, 0.11);
+      --hero-aura: radial-gradient(ellipse 65% 55% at 50% 42%, rgba(56, 189, 248, 0.12) 0%, rgba(11, 15, 23, 0) 75%);
+      --shadow-card: 0 22px 48px -16px rgba(0, 0, 0, 0.72);
+      --canvas-node: #38BDF8;
+      --canvas-node-alt: #34D399;
+      --canvas-link: 56, 189, 248;
+      --radar-fill: rgba(56, 189, 248, 0.20);
+      --radar-stroke: #38BDF8;
+      --radar-target: #34D399;
+    }
+
+    [data-theme="warm-parchment"] {
+      --bg-primary: #FBF8F3;
+      --bg-secondary: #F6F1E7;
+      --bg-card: #F3EDE2;
+      --bg-card-hover: #EAE2D3;
+      --bg-glass: rgba(251, 248, 243, 0.88);
+      --text-primary: #1F1B18;
+      --text-secondary: #4E463F;
+      --text-muted: #7C7268;
+      --accent-primary: #B85D3B;
+      --accent-primary-hover: #9F4D2F;
+      --accent-secondary: #8C6239;
+      --accent-tertiary: #3F6B54;
+      --accent-contrast: #FBF8F3;
+      --border-subtle: #DFD6C7;
+      --border-glow: rgba(184, 93, 59, 0.45);
+      --badge-bg: rgba(184, 93, 59, 0.11);
+      --spotlight: rgba(184, 93, 59, 0.08);
+      --hero-aura: radial-gradient(ellipse 65% 55% at 50% 42%, rgba(184, 93, 59, 0.10) 0%, rgba(251, 248, 243, 0) 75%);
+      --shadow-card: 0 16px 36px -14px rgba(31, 27, 24, 0.10);
+      --canvas-node: #B85D3B;
+      --canvas-node-alt: #1F1B18;
+      --canvas-link: 184, 93, 59;
+      --radar-fill: rgba(184, 93, 59, 0.18);
+      --radar-stroke: #B85D3B;
+      --radar-target: #3F6B54;
+    }
+
+    [data-theme="botanical-sage"] {
+      --bg-primary: #111916;
+      --bg-secondary: #151F1B;
+      --bg-card: #192420;
+      --bg-card-hover: #202E29;
+      --bg-glass: rgba(17, 25, 22, 0.87);
+      --text-primary: #EEF2EE;
+      --text-secondary: #C2CCC3;
+      --text-muted: #849488;
+      --accent-primary: #8FBC94;
+      --accent-primary-hover: #A3CCA8;
+      --accent-secondary: #DFB86C;
+      --accent-tertiary: #DFB86C;
+      --accent-contrast: #111916;
+      --border-subtle: #283832;
+      --border-glow: rgba(143, 188, 148, 0.50);
+      --badge-bg: rgba(143, 188, 148, 0.13);
+      --spotlight: rgba(143, 188, 148, 0.10);
+      --hero-aura: radial-gradient(ellipse 65% 55% at 50% 42%, rgba(143, 188, 148, 0.11) 0%, rgba(17, 25, 22, 0) 75%);
+      --shadow-card: 0 22px 48px -16px rgba(0, 0, 0, 0.72);
+      --canvas-node: #8FBC94;
+      --canvas-node-alt: #DFB86C;
+      --canvas-link: 143, 188, 148;
+      --radar-fill: rgba(143, 188, 148, 0.20);
+      --radar-stroke: #8FBC94;
+      --radar-target: #DFB86C;
+    }
+
+    /* Smooth Theme Transitions */
+    body,
+    header,
+    section,
+    footer,
+    aside,
+    .theme-card,
+    .theme-surface,
+    .theme-glass,
+    .theme-border,
+    .btn-gold,
+    .btn-slate {
+      transition:
+        background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Semantic Utility Bindings */
+    .bg-primary { background-color: var(--bg-primary); }
+    .bg-secondary { background-color: var(--bg-secondary); }
+    .bg-card { background-color: var(--bg-card); }
+    .bg-glass {
+      background-color: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .text-primary { color: var(--text-primary); }
+    .text-secondary { color: var(--text-secondary); }
+    .text-muted { color: var(--text-muted); }
+    .text-accent { color: var(--accent-primary); }
+    .text-antique { color: var(--accent-secondary); }
+    .text-tertiary { color: var(--accent-tertiary); }
+    .bg-badge { background-color: var(--badge-bg); color: var(--accent-primary); }
+    .border-theme { border-color: var(--border-subtle); }
+    .shadow-theme { box-shadow: var(--shadow-card); }
+
+    /* Signature Pill Buttons matching Reference Screenshot */
+    .btn-gold {
+      background-color: var(--accent-primary);
+      color: var(--accent-contrast);
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: transform 0.22s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .btn-gold:hover {
+      background-color: var(--accent-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px -8px var(--border-glow);
+    }
+    .btn-gold:active {
+      transform: translateY(0px);
+    }
+
+    .btn-slate {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: transform 0.22s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .btn-slate:hover {
+      background-color: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Interactive Spotlight Cards */
+    .spotlight-card {
+      position: relative;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease-out, border-color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+    }
+
+    .spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      background: radial-gradient(
+        420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        var(--spotlight),
+        transparent 70%
+      );
+      z-index: 1;
+    }
+
+    .spotlight-card:hover {
+      border-color: var(--border-glow);
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Top Scroll Progress Line */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      width: 0%;
+      z-index: 70;
+      background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+      transition: width 0.08s linear;
+    }
+
+    /* ==========================================================================
+       2. AMBIENT ANIMATIONS, SPARKLES & SCROLL REVEALS
+       ========================================================================== */
+    @keyframes sparkleFloatLeft {
+      0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.78; }
+      50% { transform: translateY(-10px) rotate(12deg) scale(1.12); opacity: 1; }
+    }
+
+    @keyframes sparkleFloatRight {
+      0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.75; }
+      50% { transform: translateY(10px) rotate(-12deg) scale(1.1); opacity: 1; }
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.88); }
+    }
+
+    @keyframes waveformPulse {
+      0%, 100% { height: 6px; }
+      50% { height: 22px; }
+    }
+
+    .sparkle-left {
+      color: var(--accent-secondary);
+      animation: sparkleFloatLeft 6s ease-in-out infinite;
+    }
+
+    .sparkle-right {
+      color: var(--accent-secondary);
+      animation: sparkleFloatRight 6.8s ease-in-out infinite;
+    }
+
+    .status-dot-pulse {
+      animation: pulseDot 2.4s ease-in-out infinite;
+    }
+
+    .wave-bar {
+      width: 3px;
+      border-radius: 9999px;
+      background-color: var(--accent-primary);
+      animation: waveformPulse 1.1s ease-in-out infinite;
+    }
+
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-subtle);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-primary);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-400/25">
+
+  <!-- Top Scroll Progress Line -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========================================================================
+       1. STICKY GLASSMORPHIC TOP NAVBAR
+       ======================================================================== -->
+  <header class="sticky top-0 z-40 bg-glass border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-18 gap-3">
+
+        <!-- Monogram Emblem "DS" + Uppercase Tracked Identity -->
+        <a href="#" class="flex items-center gap-3 group shrink-0">
+          <div
+            class="w-9 h-9 rounded-full bg-card flex items-center justify-center font-display font-bold text-sm text-accent tracking-wider transition-transform group-hover:scale-105"
+            style="border: 1px solid var(--accent-primary);"
+          >
+            <span id="nav-monogram">DS</span>
+          </div>
+          <div class="leading-tight">
+            <span data-profile="nameUpper" class="font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.18em] text-primary block">
+              DHIRAJ SHAH
+            </span>
+            <span class="font-mono text-[9.5px] uppercase tracking-[0.2em] text-muted block mt-0.5">
+              COMPUTER ENGINEERING • TU IOE
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Smooth-Scroll Links -->
+        <nav class="hidden lg:flex items-center gap-6 text-xs font-medium text-secondary">
+          <a href="#about" class="hover:text-accent transition-colors">About</a>
+          <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
+          <a href="#rag-lab" class="hover:text-accent transition-colors">RAG Lab</a>
+          <a href="#education" class="hover:text-accent transition-colors">Education</a>
+          <a href="#roadmap" class="hover:text-accent transition-colors">Roadmap</a>
+          <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Controls: Theme Switcher Pill Selector + Customize Button -->
+        <div class="flex items-center gap-2">
+
+          <!-- Theme Switcher Dropdown Pill -->
+          <div class="relative" id="theme-switcher-wrapper">
+            <button
+              onclick="toggleThemeDropdown()"
+              aria-label="Switch aesthetic theme"
+              class="btn-slate px-3.5 py-2 text-xs flex items-center gap-2"
+            >
+              <span id="theme-active-dot" class="w-2.5 h-2.5 rounded-full shrink-0" style="background:#EBB85C;"></span>
+              <span id="theme-active-name" class="hidden sm:inline">Midnight Library</span>
+              <svg class="w-3.5 h-3.5 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            <div
+              id="theme-dropdown-menu"
+              class="hidden absolute right-0 mt-2 w-64 rounded-2xl bg-card border border-theme shadow-2xl p-2 z-50"
+            >
+              <div class="px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-muted">
+                Aesthetic Palette
+              </div>
+              <div id="theme-dropdown-list" class="space-y-1 mt-1">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Customize Button (Opens Live Profile Customizer Drawer) -->
+          <button
+            onclick="openCustomizerDrawer()"
+            class="btn-gold px-4 py-2 text-xs flex items-center gap-1.5 shrink-0"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+            </svg>
+            <span>Customize</span>
+          </button>
+
+          <!-- Mobile Navigation Menu Toggle -->
+          <button
+            onclick="toggleMobileNav()"
+            aria-label="Open navigation menu"
+            class="lg:hidden btn-slate p-2"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapsible Mobile Nav Bar -->
+      <div id="mobile-nav-drawer" class="hidden lg:hidden pb-4 pt-2 border-t border-theme">
+        <div class="flex flex-wrap gap-2">
+          <a href="#about" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">About</a>
+          <a href="#skills" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">Skills</a>
+          <a href="#projects" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">Projects</a>
+          <a href="#rag-lab" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">RAG Lab</a>
+          <a href="#education" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">Education</a>
+          <a href="#roadmap" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">Roadmap</a>
+          <a href="#contact" onclick="toggleMobileNav(false)" class="px-3 py-1.5 rounded-full bg-card border border-theme text-xs text-secondary hover:text-accent">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION (MIDNIGHT LIBRARY DARK-GOLD EDITORIAL SHOWCASE)
+       ======================================================================== -->
+  <section class="relative overflow-hidden border-b border-theme min-h-[86vh] flex items-center">
+    <!-- Subtle Interactive HTML5 Canvas Constellation -->
+    <canvas id="constellation-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+    <!-- Warm Radial Golden Spotlight Aura Behind Hero Center -->
+    <div
+      id="hero-aura-layer"
+      class="absolute inset-0 pointer-events-none"
+      style="background: var(--hero-aura);"
+    ></div>
+
+    <!-- Symmetrical Floating 4-Point Antique Gold Sparkles (✦) on Left & Right Margins -->
+    <div class="pointer-events-none select-none" aria-hidden="true">
+      <span class="sparkle-left absolute top-24 left-[8%] sm:left-[12%] text-xl sm:text-2xl">✦</span>
+      <span class="sparkle-left hidden md:inline-block absolute bottom-36 left-[15%] text-sm" style="animation-delay: 1.8s;">✦</span>
+      <span class="sparkle-right absolute top-32 right-[8%] sm:right-[12%] text-xl sm:text-2xl">✦</span>
+      <span class="sparkle-right hidden md:inline-block absolute bottom-32 right-[15%] text-sm" style="animation-delay: 2.3s;">✦</span>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10 w-full text-center">
+      <div class="space-y-6">
+
+        <!-- Top Archival Pill Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-card border border-theme text-[11px] font-mono uppercase tracking-[0.2em] text-secondary shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-accent status-dot-pulse"></span>
+          <span>COMPUTER ENGINEERING PORTFOLIO • <span data-profile="gradYear">2026</span></span>
+        </div>
+
+        <!-- Bold Playfair Display Name + Italic Luminous Gold Sub-Headline -->
+        <div class="space-y-1">
+          <h1
+            data-profile="name"
+            class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl tracking-tight text-primary leading-[1.06]"
+          >
+            Dhiraj Shah
+          </h1>
+          <p class="font-display italic font-semibold text-3xl sm:text-5xl lg:text-[3.4rem] text-accent leading-[1.14]">
+            Engineering Intelligent Systems
+          </p>
+        </div>
+
+        <!-- Interactive Cycling Role Badge -->
+        <div class="pt-1">
+          <button
+            onclick="cycleHeroRole()"
+            title="Click to cycle specialty focus"
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card/90 border border-theme hover:border-amber-400/50 text-xs font-mono text-secondary transition-all"
+          >
+            <span class="text-accent">✦</span>
+            <span id="hero-cycling-role" class="text-primary font-medium">AI/ML Engineer</span>
+            <span class="text-muted text-[10px]">• Click to cycle</span>
+          </button>
+        </div>
+
+        <!-- Lora Editorial Narrative Paragraph -->
+        <p
+          data-profile="bio"
+          class="font-editorial text-base sm:text-lg lg:text-[1.15rem] text-secondary max-w-2xl mx-auto leading-[1.78]"
+        >
+          4th-year Computer Engineering student at Tribhuvan University (Institute of Engineering), Nepal—combining low-level hardware and systems mastery with practical AI, speech, and retrieval-augmented generation solutions built for international remote engineering teams.
+        </p>
+
+        <!-- Pill CTA Row matching Reference Screenshot -->
+        <div class="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+          <a
+            href="#projects"
+            class="btn-gold px-7 py-3.5 text-sm inline-flex items-center gap-2"
+          >
+            <span>Explore Projects</span>
+            <span>→</span>
+          </a>
+
+          <a
+            href="#rag-lab"
+            class="btn-slate px-7 py-3.5 text-sm inline-flex items-center gap-2"
+          >
+            <span>Launch RAG Simulator</span>
+            <span class="text-accent">✦</span>
+          </a>
+
+          <button
+            onclick="openCustomizerDrawer()"
+            class="px-5 py-3.5 rounded-full text-xs sm:text-sm font-medium text-secondary hover:text-accent border border-transparent hover:border-theme transition-all"
+          >
+            Personalize Info
+          </button>
+        </div>
+
+        <!-- Clean Hairline-Separated 4-Column Metric Bar -->
+        <div class="pt-10 mt-8 border-t border-theme max-w-3xl mx-auto">
+          <div class="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#2E313D]/60">
+            <div class="py-3 sm:py-1 px-4">
+              <div class="font-display font-bold text-2xl sm:text-3xl text-primary">3–4 Hrs</div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-muted mt-1">Daily Focused Practice</div>
+            </div>
+            <div class="py-3 sm:py-1 px-4">
+              <div class="font-display font-bold text-2xl sm:text-3xl text-primary">3 Nations</div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-muted mt-1">SAARC Legal Corpus</div>
+            </div>
+            <div class="py-3 sm:py-1 px-4">
+              <div class="font-display font-bold text-2xl sm:text-3xl text-primary">6-Stage</div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-muted mt-1">Hybrid RAG Pipeline</div>
+            </div>
+            <div class="py-3 sm:py-1 px-4">
+              <div class="font-display font-bold text-2xl sm:text-3xl text-primary">TU IOE</div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-muted mt-1">B.E. Computer Engineering</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. ABOUT & ENGINEERING DNA (WITH INTERACTIVE 4-AXIS SVG RADAR CHART)
+       ======================================================================== -->
+  <section id="about" class="py-16 sm:py-24 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Editorial & Engineering Philosophy Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+              01 // About &amp; Engineering DNA
+            </span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+              Bridging Bare-Metal Systems &amp; <span class="italic text-accent">Applied Intelligence</span>
+            </h2>
+          </div>
+
+          <div class="font-editorial space-y-4 text-sm sm:text-base text-secondary leading-[1.82]">
+            <p>
+              I am <strong data-profile="name" class="text-primary font-semibold">Dhiraj Shah</strong>, a fourth-year Computer Engineering undergraduate at <strong data-profile="university" class="text-primary font-semibold">Tribhuvan University — Institute of Engineering (IOE)</strong> in <span data-profile="location">Kathmandu Valley, Nepal</span>. My engineering approach is rooted in understanding how systems work from the silicon and kernel upward—and applying that discipline to modern Artificial Intelligence.
+            </p>
+            <p>
+              Rather than treating machine learning models as isolated notebooks, I architect complete, resilient pipelines: pairing low-level <strong class="text-primary">C programming, Digital Signal Processing, and Embedded Systems</strong> with <strong class="text-primary">PyTorch, QLoRA fine-tuning, and multi-stage hybrid RAG retrieval</strong>.
+            </p>
+            <p>
+              Through <strong class="text-primary">3–4 hours of daily deliberate practice</strong>, I continuously build, benchmark, and document software solutions designed for international remote engineering teams.
+            </p>
+          </div>
+
+          <!-- Three Core Pillars -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="spotlight-card rounded-2xl p-4">
+              <div class="font-mono text-xs font-semibold text-accent mb-1.5">✦ Continuous Daily Learning</div>
+              <p class="text-xs text-secondary leading-relaxed">
+                3–4 hours every day dedicated to PyTorch experimentation, systems tuning, and algorithm mastery.
+              </p>
+            </div>
+            <div class="spotlight-card rounded-2xl p-4">
+              <div class="font-mono text-xs font-semibold text-accent mb-1.5">✦ End-to-End System Design</div>
+              <p class="text-xs text-secondary leading-relaxed">
+                Architecting full pipelines from PlantUML sequence diagrams to quantized model inference &amp; hardware I/O.
+              </p>
+            </div>
+            <div class="spotlight-card rounded-2xl p-4">
+              <div class="font-mono text-xs font-semibold text-accent mb-1.5">✦ Remote-Ready Collaboration</div>
+              <p class="text-xs text-secondary leading-relaxed">
+                Clear technical documentation, reproducible Git workflows, and async engineering discipline.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive 4-Axis SVG Capability Radar Chart -->
+        <div class="lg:col-span-5">
+          <div class="spotlight-card rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="font-display font-bold text-xl text-primary">Engineering Capability Radar</h3>
+                <p class="font-mono text-[11px] text-muted mt-0.5">Click vertices or toggle target trajectory</p>
+              </div>
+
+              <!-- Toggle Switch: Baseline vs 2026 Industry Target -->
+              <button
+                id="radar-mode-toggle"
+                onclick="toggleRadarComparison()"
+                class="btn-slate px-3.5 py-1.5 text-xs flex items-center gap-2"
+              >
+                <span id="radar-toggle-indicator" class="w-2 h-2 rounded-full bg-muted"></span>
+                <span id="radar-toggle-label">2026 Industry Target: Off</span>
+              </button>
+            </div>
+
+            <!-- Interactive 4-Axis SVG Radar Chart -->
+            <div class="flex items-center justify-center my-2">
+              <svg id="capability-radar-svg" viewBox="0 0 400 340" class="w-full max-w-[390px] h-auto overflow-visible">
+                <!-- Concentric Diamond Grid Rings -->
+                <polygon points="200,45 325,170 200,295 75,170" fill="none" stroke="var(--border-subtle)" stroke-width="1" />
+                <polygon points="200,76 294,170 200,264 106,170" fill="none" stroke="var(--border-subtle)" stroke-width="1" stroke-dasharray="3 3" />
+                <polygon points="200,107 263,170 200,233 137,170" fill="none" stroke="var(--border-subtle)" stroke-width="1" />
+                <polygon points="200,138 232,170 200,202 168,170" fill="none" stroke="var(--border-subtle)" stroke-width="1" stroke-dasharray="2 2" />
+
+                <!-- 4 Axis Lines -->
+                <line x1="200" y1="45" x2="200" y2="295" stroke="var(--border-subtle)" stroke-width="1" />
+                <line x1="75" y1="170" x2="325" y2="170" stroke="var(--border-subtle)" stroke-width="1" />
+
+                <!-- 2026 Industry Target Polygon (Animated Toggle) -->
+                <polygon
+                  id="radar-target-polygon"
+                  points="200,48 318,170 200,285 84,170"
+                  fill="rgba(143, 188, 148, 0.12)"
+                  stroke="var(--radar-target)"
+                  stroke-width="2"
+                  stroke-dasharray="5 4"
+                  style="opacity: 0; transition: opacity 0.45s ease;"
+                />
+
+                <!-- Current 4th-Year Baseline Polygon -->
+                <polygon
+                  id="radar-baseline-polygon"
+                  points="200,56 306,170 200,275 94,170"
+                  fill="var(--radar-fill)"
+                  stroke="var(--radar-stroke)"
+                  stroke-width="2.4"
+                  style="transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);"
+                />
+
+                <!-- Interactive Axis Vertices -->
+                <circle cx="200" cy="56" r="6" fill="var(--radar-stroke)" class="cursor-pointer" onclick="selectRadarAxis(0)" onmouseover="selectRadarAxis(0)" />
+                <circle cx="306" cy="170" r="6" fill="var(--radar-stroke)" class="cursor-pointer" onclick="selectRadarAxis(1)" onmouseover="selectRadarAxis(1)" />
+                <circle cx="200" cy="275" r="6" fill="var(--radar-stroke)" class="cursor-pointer" onclick="selectRadarAxis(2)" onmouseover="selectRadarAxis(2)" />
+                <circle cx="94" cy="170" r="6" fill="var(--radar-stroke)" class="cursor-pointer" onclick="selectRadarAxis(3)" onmouseover="selectRadarAxis(3)" />
+
+                <!-- 4 Axis Labels -->
+                <text x="200" y="24" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600" font-family="Inter, sans-serif">
+                  AI &amp; Neural Retrieval (91%)
+                </text>
+                <text x="332" y="165" text-anchor="start" fill="var(--text-primary)" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
+                  Systems &amp;
+                </text>
+                <text x="332" y="179" text-anchor="start" fill="var(--accent-primary)" font-size="10" font-family="JetBrains Mono, monospace">
+                  Low-Level C (85%)
+                </text>
+                <text x="200" y="317" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600" font-family="Inter, sans-serif">
+                  Software Architecture (84%)
+                </text>
+                <text x="68" y="165" text-anchor="end" fill="var(--text-primary)" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
+                  Data &amp; Signal
+                </text>
+                <text x="68" y="179" text-anchor="end" fill="var(--accent-primary)" font-size="10" font-family="JetBrains Mono, monospace">
+                  Processing (85%)
+                </text>
+              </svg>
+            </div>
+
+            <!-- Legend + Selected Axis Detail Readout -->
+            <div class="space-y-2.5 mt-2">
+              <div class="flex items-center justify-center gap-5 font-mono text-[11px] text-muted">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-accent"></span> Current 4th-Year Baseline
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full" style="background: var(--radar-target);"></span> 2026 Industry Target
+                </span>
+              </div>
+
+              <div id="radar-axis-readout" class="p-3.5 rounded-2xl bg-secondary border border-theme text-xs text-secondary leading-relaxed">
+                <strong class="text-accent font-mono">AI &amp; Neural Retrieval (91%):</strong> PyTorch, QLoRA 4-bit fine-tuning on Qwen3-14B-Instruct, BM25 + BGE-M3 + Cross-Encoder hybrid RAG, Whisper Large-v3 Turbo, Coqui XTTS-v2 &amp; IndicTrans2.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. TECHNICAL SKILLS MATRIX (INTERACTIVE CATEGORY FILTER)
+       ======================================================================== -->
+  <section id="skills" class="py-16 sm:py-24 bg-secondary/45 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+            02 // Technical Skills Matrix
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+            Capabilities Built Through <span class="italic text-accent">Hands-On Practice</span>
+          </h2>
+          <p class="font-editorial text-sm sm:text-base text-secondary mt-2 max-w-2xl">
+            Every technology listed below has been directly applied across university engineering laboratories, system-level kernel optimization, or end-to-end AI pipelines.
+          </p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div id="skill-filter-pills" class="flex flex-wrap gap-2">
+          <!-- Rendered dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Filtered Skill Cards Grid -->
+      <div id="skills-matrix-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. FEATURED PROJECTS (WITH DETAILED CASE STUDY MODAL)
+       ======================================================================== -->
+  <section id="projects" class="py-16 sm:py-24 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+            03 // Featured Engineering Projects
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+            Architectures &amp; <span class="italic text-accent">Systems Built</span>
+          </h2>
+          <p class="font-editorial text-sm sm:text-base text-secondary mt-2 max-w-2xl">
+            From multimodal South Asian legal retrieval engines to embedded residential load automation and kernel-level thermal engineering.
+          </p>
+        </div>
+
+        <a href="#rag-lab" class="btn-slate px-5 py-2.5 text-xs inline-flex items-center gap-2 self-start lg:self-auto">
+          <span>Test Flagship RAG Pipeline Live</span>
+          <span class="text-accent">✦</span>
+        </a>
+      </div>
+
+      <!-- 4 Rich Project Cards -->
+      <div id="projects-cards-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. INTERACTIVE SAARC LEGAL RAG ARCHITECTURE SIMULATOR ("RAG LAB")
+       ======================================================================== -->
+  <section id="rag-lab" class="py-16 sm:py-24 bg-secondary/45 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+            04 // Interactive RAG Lab
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+            SAARC Legal RAG <span class="italic text-accent">Architecture Simulator</span>
+          </h2>
+          <p class="font-editorial text-sm sm:text-base text-secondary mt-2 max-w-2xl">
+            Simulate our 6-stage multimodal legal retrieval pipeline across Nepal, Bhutan, and Bangladesh statutory corpora—toggling speech synthesis and cross-lingual translation in real time.
+          </p>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-theme font-mono text-[11px] text-secondary self-start">
+          <span class="w-2 h-2 rounded-full bg-accent"></span>
+          <span>Mid-Term Milestone Verified • Aug 2026</span>
+        </div>
+      </div>
+
+      <!-- Workbench Container -->
+      <div class="spotlight-card rounded-3xl p-6 sm:p-8 space-y-6">
+
+        <!-- Top Controls Row: Jurisdiction Pills + Multimodal Toggles -->
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-5 border-b border-theme">
+          <!-- Jurisdiction Selector Pills -->
+          <div class="space-y-2">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-muted block">1. Select Statutory Jurisdiction</span>
+            <div id="rag-jurisdiction-pills" class="flex flex-wrap gap-2">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- Multimodal Toggles: Voice Input & Cross-Lingual Translation -->
+          <div class="space-y-2">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-muted block">2. Toggle Multimodal Pipeline Stages</span>
+            <div class="flex flex-wrap gap-2.5">
+              <button
+                id="toggle-voice-btn"
+                onclick="toggleRagFeature('voice')"
+                class="px-4 py-2 rounded-full text-xs font-mono border flex items-center gap-2 transition-all"
+              >
+                <span id="voice-dot" class="w-2 h-2 rounded-full"></span>
+                <span>Voice Input (Whisper + XTTS-v2)</span>
+              </button>
+
+              <button
+                id="toggle-translation-btn"
+                onclick="toggleRagFeature('translation')"
+                class="px-4 py-2 rounded-full text-xs font-mono border flex items-center gap-2 transition-all"
+              >
+                <span id="translation-dot" class="w-2 h-2 rounded-full"></span>
+                <span>Cross-Lingual Translation (IndicTrans2)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Query Input + Run Hybrid Pipeline Button -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex-1 relative">
+            <input
+              id="rag-query-input"
+              type="text"
+              aria-label="Legal query input"
+              class="w-full px-5 py-3.5 rounded-full bg-secondary border border-theme text-xs sm:text-sm text-primary placeholder:text-muted focus:outline-none focus:border-amber-400"
+            />
+          </div>
+          <button
+            id="run-rag-btn"
+            onclick="runRagPipelineSimulation()"
+            class="btn-gold px-7 py-3.5 text-xs sm:text-sm inline-flex items-center justify-center gap-2 shrink-0"
+          >
+            <span>Run Hybrid Pipeline</span>
+            <span>✦</span>
+          </button>
+        </div>
+
+        <!-- 6-Stage Pipeline Execution Cards -->
+        <div id="rag-stages-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Retrieval Metrics + Grounded Legal Citation Response Card -->
+        <div id="rag-output-panel" class="rounded-2xl bg-secondary border border-theme p-5 sm:p-6 space-y-5 transition-opacity duration-300">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. TU IOE ACADEMIC FOUNDATION & INTERACTIVE COURSEWORK EXPLORER
+       ======================================================================== -->
+  <section id="education" class="py-16 sm:py-24 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left Academic Credential Card -->
+        <div class="lg:col-span-5 space-y-5">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+              05 // Academic Foundation
+            </span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+              Tribhuvan University <span class="italic text-accent">(IOE)</span>
+            </h2>
+          </div>
+
+          <div class="spotlight-card rounded-3xl p-6 sm:p-7 space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full bg-badge font-mono text-[11px] font-semibold">
+                4th Year • Final Year Standing
+              </span>
+              <span class="font-mono text-xs text-muted">Class of <span data-profile="gradYear">2026</span></span>
+            </div>
+
+            <div>
+              <h3 class="font-display font-bold text-xl text-primary">
+                Bachelor of Engineering (B.E.) in Computer Engineering
+              </h3>
+              <p data-profile="university" class="font-editorial text-sm text-secondary mt-1">
+                Tribhuvan University — Institute of Engineering (IOE)
+              </p>
+              <p data-profile="location" class="font-mono text-xs text-muted mt-1">
+                Kathmandu Valley, Nepal
+              </p>
+            </div>
+
+            <p class="text-xs sm:text-sm text-secondary leading-relaxed pt-2 border-t border-theme">
+              Rigorous engineering curriculum integrating hardware architecture, mathematical signal analysis, compiler theory, distributed computing, and software engineering discipline.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Interactive Coursework Explorer -->
+        <div class="lg:col-span-7 space-y-5">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-wider text-muted block mb-1">
+              Interactive Syllabus Mapping
+            </span>
+            <h3 class="font-display font-bold text-2xl text-primary">
+              How TU IOE Coursework Powers My AI &amp; Software Stack
+            </h3>
+            <p class="text-xs sm:text-sm text-secondary mt-1">
+              Select any core engineering subject below to inspect its direct application to modern AI/ML and systems development:
+            </p>
+          </div>
+
+          <!-- 10 Clickable Coursework Pills -->
+          <div id="coursework-pills-container" class="flex flex-wrap gap-2">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Dynamic Coursework Insight Card -->
+          <div id="coursework-detail-panel" class="spotlight-card rounded-3xl p-6 sm:p-7">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. 4-STAGE CAREER ROADMAP & CONTACT HUB
+       ======================================================================== -->
+  <section id="roadmap" class="py-16 sm:py-24 bg-secondary/45 border-b border-theme reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl mb-10">
+        <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+          06 // Trajectory &amp; Ambition
+        </span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+          4-Stage Career <span class="italic text-accent">Roadmap</span>
+        </h2>
+        <p class="font-editorial text-sm sm:text-base text-secondary mt-2">
+          A deliberate progression from strong Computer Engineering fundamentals in Nepal to contributing as a full-time AI/ML Engineer on international remote teams.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Stage 1 -->
+        <div class="spotlight-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-bold text-accent">STAGE 01</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-badge font-mono text-[10px] font-semibold">CURRENT</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary">4th-Year Engineering &amp; ML Mastery</h3>
+            <p class="text-xs text-secondary leading-relaxed">
+              Completing B.E. Computer Engineering at TU IOE while maintaining 3–4 hours daily practice in PyTorch, Python, C, and mathematical foundations.
+            </p>
+          </div>
+          <div class="font-mono text-[11px] text-muted pt-3 border-t border-theme">
+            Focus: Deep Fundamentals &amp; Discipline
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="spotlight-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-bold text-accent">STAGE 02</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary border border-theme font-mono text-[10px] text-secondary">IN PROGRESS</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary">Multimodal AI Systems &amp; Open-Source Portfolio</h3>
+            <p class="text-xs text-secondary leading-relaxed">
+              Advancing the SAARC Legal RAG system, publishing clean modular repositories on GitHub, and documenting architectures with PlantUML.
+            </p>
+          </div>
+          <div class="font-mono text-[11px] text-muted pt-3 border-t border-theme">
+            Focus: End-to-End Applied Prototypes
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="spotlight-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-bold text-accent">STAGE 03</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary border border-theme font-mono text-[10px] text-secondary">NEXT MILESTONE</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary">Production MLOps &amp; Cloud Deployment</h3>
+            <p class="text-xs text-secondary leading-relaxed">
+              Containerized FastAPI inference services, automated RAG evaluation suites, vector index scaling, and CI/CD testing pipelines.
+            </p>
+          </div>
+          <div class="font-mono text-[11px] text-muted pt-3 border-t border-theme">
+            Focus: Reliability &amp; Production Scale
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="spotlight-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-bold text-accent">STAGE 04</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary border border-theme font-mono text-[10px] text-secondary">TARGET ROLE</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary">International Remote AI/ML Engineer</h3>
+            <p class="text-xs text-secondary leading-relaxed">
+              Collaborating across global time zones to ship practical intelligent applications, multilingual NLP pipelines, and resilient software.
+            </p>
+          </div>
+          <div class="font-mono text-[11px] text-muted pt-3 border-t border-theme">
+            Focus: Global Remote Impact
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTACT HUB
+       ======================================================================== -->
+  <section id="contact" class="py-16 sm:py-24 reveal-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left Contact Details & Quick Copy Card -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.22em] text-accent block mb-2">
+              07 // Connect &amp; Collaborate
+            </span>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary tracking-tight">
+              Let’s Build <span class="italic text-accent">Meaningful Software</span>
+            </h2>
+            <p class="font-editorial text-sm sm:text-base text-secondary mt-3 leading-relaxed">
+              Open to AI/ML Engineering internships, junior/associate remote roles, research collaborations, and software development opportunities with international teams.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <!-- 1-Click Copy Email Card -->
+            <div class="spotlight-card rounded-2xl p-4 flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-muted block">Direct Email</span>
+                <span data-profile="email" class="font-mono text-xs sm:text-sm text-primary font-semibold truncate block mt-0.5">
+                  dhiraj.shah@ioe.edu.np
+                </span>
+              </div>
+              <button
+                onclick="copyEmailAddress()"
+                class="btn-gold px-4 py-2 text-xs shrink-0"
+              >
+                <span id="copy-email-text">Copy Email</span>
+              </button>
+            </div>
+
+            <!-- GitHub Profile Link Card -->
+            <a
+              id="contact-github-link"
+              href="https://github.com/dhiraj-7x7x"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="spotlight-card rounded-2xl p-4 flex items-center justify-between gap-3 group"
+            >
+              <div class="min-w-0">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-muted block">GitHub Repositories</span>
+                <span data-profile="githubClean" class="font-mono text-xs sm:text-sm text-primary group-hover:text-accent transition-colors truncate block mt-0.5">
+                  github.com/dhiraj-7x7x
+                </span>
+              </div>
+              <span class="text-accent font-mono text-xs shrink-0">Open ↗</span>
+            </a>
+
+            <!-- LinkedIn Profile Link Card -->
+            <a
+              id="contact-linkedin-link"
+              href="https://linkedin.com/in/dhiraj-shah-ioe"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="spotlight-card rounded-2xl p-4 flex items-center justify-between gap-3 group"
+            >
+              <div class="min-w-0">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-muted block">LinkedIn Network</span>
+                <span data-profile="linkedinClean" class="font-mono text-xs sm:text-sm text-primary group-hover:text-accent transition-colors truncate block mt-0.5">
+                  linkedin.com/in/dhiraj-shah-ioe
+                </span>
+              </div>
+              <span class="text-accent font-mono text-xs shrink-0">Connect ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Direct Message Form -->
+        <div class="lg:col-span-7">
+          <div class="spotlight-card rounded-3xl p-6 sm:p-8">
+            <h3 class="font-display font-bold text-2xl text-primary mb-1">Send a Direct Note</h3>
+            <p class="text-xs text-muted mb-6">Whether regarding remote AI/ML roles, RAG architectures, or collaborative builds.</p>
+
+            <form id="contact-message-form" onsubmit="submitContactForm(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="sender-name" class="text-xs font-medium text-secondary block mb-1.5">Your Name</label>
+                  <input
+                    id="sender-name"
+                    type="text"
+                    required
+                    placeholder="Alex Morgan"
+                    class="w-full px-4 py-3 rounded-2xl bg-secondary border border-theme text-xs sm:text-sm text-primary placeholder:text-muted focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+                <div>
+                  <label for="sender-email" class="text-xs font-medium text-secondary block mb-1.5">Your Email</label>
+                  <input
+                    id="sender-email"
+                    type="email"
+                    required
+                    placeholder="alex@company.com"
+                    class="w-full px-4 py-3 rounded-2xl bg-secondary border border-theme text-xs sm:text-sm text-primary placeholder:text-muted focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="sender-topic" class="text-xs font-medium text-secondary block mb-1.5">Subject / Opportunity</label>
+                <input
+                  id="sender-topic"
+                  type="text"
+                  required
+                  placeholder="Remote AI/ML Engineer Opportunity / Collaboration"
+                  class="w-full px-4 py-3 rounded-2xl bg-secondary border border-theme text-xs sm:text-sm text-primary placeholder:text-muted focus:outline-none focus:border-amber-400"
+                />
+              </div>
+
+              <div>
+                <label for="sender-message" class="text-xs font-medium text-secondary block mb-1.5">Message</label>
+                <textarea
+                  id="sender-message"
+                  rows="4"
+                  required
+                  placeholder="Hello Dhiraj, I reviewed your SAARC Legal RAG system and systems engineering background..."
+                  class="w-full px-4 py-3 rounded-2xl bg-secondary border border-theme text-xs sm:text-sm text-primary placeholder:text-muted focus:outline-none focus:border-amber-400"
+                ></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+                <span class="font-mono text-[11px] text-muted">Response time: &lt; 24 hours (NPT / UTC+5:45)</span>
+                <button type="submit" class="btn-gold px-7 py-3.5 text-xs sm:text-sm inline-flex items-center gap-2">
+                  <span>Dispatch Message</span>
+                  <span>✦</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="bg-secondary/70 border-t border-theme py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+      <div class="flex items-center gap-2">
+        <span class="text-accent">✦</span>
+        <span>© <span data-profile="gradYear">2026</span> <strong data-profile="name" class="text-primary">Dhiraj Shah</strong> • B.E. Computer Engineering, <span data-profile="university">Tribhuvan University (IOE)</span></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="openCustomizerDrawer()" class="text-accent hover:underline font-medium">
+          Customize &amp; Export Standalone HTML
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT CASE STUDY MODAL
+       ======================================================================== -->
+  <div
+    id="project-case-modal"
+    onclick="if(event.target === this) closeProjectCaseModal()"
+    class="hidden fixed inset-0 z-50 items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      id="project-case-panel"
+      class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-card border border-theme shadow-2xl p-6 sm:p-8 transform scale-95 opacity-0 transition-all duration-300"
+    >
+      <button
+        onclick="closeProjectCaseModal()"
+        aria-label="Close modal"
+        class="sticky top-0 float-right z-20 w-9 h-9 rounded-full bg-secondary border border-theme flex items-center justify-center text-primary hover:text-accent"
+      >✕</button>
+      <div id="project-case-body" class="clear-both">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       9. LIVE PROFILE CUSTOMIZER SLIDE-OVER DRAWER & HTML EXPORT
+       ======================================================================== -->
+  <div
+    id="customizer-backdrop"
+    onclick="closeCustomizerDrawer()"
+    class="hidden fixed inset-0 z-50 bg-black/65 backdrop-blur-xs"
+  ></div>
+
+  <aside
+    id="customizer-drawer"
+    aria-label="Live Profile Customizer Drawer"
+    class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-card border-l border-theme shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+  >
+    <div class="p-5 border-b border-theme flex items-center justify-between">
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-accent block">Live Portfolio Studio</span>
+        <h3 class="font-display font-bold text-xl text-primary">Customize Profile &amp; Export</h3>
+      </div>
+      <button
+        onclick="closeCustomizerDrawer()"
+        aria-label="Close Customizer Drawer"
+        class="w-9 h-9 rounded-full bg-secondary border border-theme flex items-center justify-center text-primary hover:text-accent"
+      >✕</button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-5 space-y-4">
+      <p class="text-xs text-secondary leading-relaxed">
+        Every edit updates the live page immediately. Download a self-contained <code class="font-mono text-accent">dhiraj-shah-portfolio.html</code> file whenever you are ready to host.
+      </p>
+
+      <div>
+        <label for="cust-name" class="text-xs font-medium text-secondary block mb-1">Full Name</label>
+        <input
+          id="cust-name"
+          type="text"
+          oninput="updateProfileField('name', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs sm:text-sm text-primary focus:outline-none focus:border-amber-400"
+        />
+      </div>
+
+      <div>
+        <label for="cust-university" class="text-xs font-medium text-secondary block mb-1">University / Campus</label>
+        <input
+          id="cust-university"
+          type="text"
+          oninput="updateProfileField('university', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs sm:text-sm text-primary focus:outline-none focus:border-amber-400"
+        />
+        <!-- Quick TU IOE Campus Presets -->
+        <div class="flex flex-wrap gap-1.5 mt-2">
+          <button type="button" onclick="applyCampusPreset('Pulchowk Campus, TU IOE')" class="px-2.5 py-1 rounded-full bg-secondary border border-theme text-[11px] text-secondary hover:text-accent">Pulchowk Campus</button>
+          <button type="button" onclick="applyCampusPreset('Thapathali Campus, TU IOE')" class="px-2.5 py-1 rounded-full bg-secondary border border-theme text-[11px] text-secondary hover:text-accent">Thapathali Campus</button>
+          <button type="button" onclick="applyCampusPreset('Pashchimanchal Campus, TU IOE')" class="px-2.5 py-1 rounded-full bg-secondary border border-theme text-[11px] text-secondary hover:text-accent">Pashchimanchal Campus</button>
+          <button type="button" onclick="applyCampusPreset('Purwanchal Campus, TU IOE')" class="px-2.5 py-1 rounded-full bg-secondary border border-theme text-[11px] text-secondary hover:text-accent">Purwanchal Campus</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label for="cust-location" class="text-xs font-medium text-secondary block mb-1">Location</label>
+          <input
+            id="cust-location"
+            type="text"
+            oninput="updateProfileField('location', this.value)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary focus:outline-none focus:border-amber-400"
+          />
+        </div>
+        <div>
+          <label for="cust-gradYear" class="text-xs font-medium text-secondary block mb-1">Graduation Year</label>
+          <input
+            id="cust-gradYear"
+            type="text"
+            oninput="updateProfileField('gradYear', this.value)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary focus:outline-none focus:border-amber-400"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="cust-email" class="text-xs font-medium text-secondary block mb-1">Email Address</label>
+        <input
+          id="cust-email"
+          type="email"
+          oninput="updateProfileField('email', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary focus:outline-none focus:border-amber-400"
+        />
+      </div>
+
+      <div>
+        <label for="cust-github" class="text-xs font-medium text-secondary block mb-1">GitHub URL</label>
+        <input
+          id="cust-github"
+          type="url"
+          oninput="updateProfileField('github', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary focus:outline-none focus:border-amber-400"
+        />
+      </div>
+
+      <div>
+        <label for="cust-linkedin" class="text-xs font-medium text-secondary block mb-1">LinkedIn URL</label>
+        <input
+          id="cust-linkedin"
+          type="url"
+          oninput="updateProfileField('linkedin', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary focus:outline-none focus:border-amber-400"
+        />
+      </div>
+
+      <div>
+        <label for="cust-bio" class="text-xs font-medium text-secondary block mb-1">Hero Narrative Bio</label>
+        <textarea
+          id="cust-bio"
+          rows="4"
+          oninput="updateProfileField('bio', this.value)"
+          class="w-full px-3.5 py-2.5 rounded-xl bg-secondary border border-theme text-xs text-primary leading-relaxed focus:outline-none focus:border-amber-400"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="p-5 border-t border-theme bg-secondary/50 space-y-2.5">
+      <button
+        onclick="downloadStandaloneHTML()"
+        class="btn-gold w-full py-3 text-xs sm:text-sm flex items-center justify-center gap-2"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        <span>Download Standalone HTML</span>
+      </button>
+
+      <button
+        onclick="resetCustomizerToDefault()"
+        class="btn-slate w-full py-2.5 text-xs text-secondary"
+      >
+        Reset to Dhiraj Shah Defaults
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-xs w-full"></div>
+
+  <!-- ========================================================================
+       COMPLETE JAVASCRIPT APPLICATION LOGIC
+       ======================================================================== -->
+  <script>
+    /* ------------------------------------------------------------------------
+       1. FOUR CURATED AESTHETIC THEMES ("MIDNIGHT LIBRARY" DEFAULT)
+       ------------------------------------------------------------------------ */
+    const THEMES = [
+      { id: 'midnight-library', name: 'Midnight Library', desc: 'Obsidian Slate & Luminous Gold', dot: '#EBB85C' },
+      { id: 'midnight-cyber', name: 'Midnight Cyber', desc: 'Deep Carbon, Cyan & Emerald', dot: '#38BDF8' },
+      { id: 'warm-parchment', name: 'Warm Parchment', desc: 'Cream Paper & Terracotta Ink', dot: '#B85D3B' },
+      { id: 'botanical-sage', name: 'Botanical Sage', desc: 'Deep Pine, Sage & Warm Brass', dot: '#8FBC94' }
+    ];
+
+    /* ------------------------------------------------------------------------
+       2. DEFAULT PROFILE FOR DHIRAJ SHAH (TU IOE, NEPAL)
+       ------------------------------------------------------------------------ */
+    const DEFAULT_PROFILE = {
+      name: 'Dhiraj Shah',
+      university: 'Tribhuvan University — Institute of Engineering (IOE)',
+      location: 'Kathmandu Valley, Nepal',
+      gradYear: '2026',
+      email: 'dhiraj.shah@ioe.edu.np',
+      github: 'https://github.com/dhiraj-7x7x',
+      linkedin: 'https://linkedin.com/in/dhiraj-shah-ioe',
+      bio: '4th-year Computer Engineering student at Tribhuvan University (Institute of Engineering), Nepal—combining low-level hardware and systems mastery with practical AI, speech, and retrieval-augmented generation solutions built for international remote engineering teams.'
+    };
+
+    const HERO_ROLES = [
+      'AI/ML Engineer',
+      'Hybrid RAG Architect',
+      'Systems & Embedded Developer',
+      'Full-Stack Builder'
+    ];
+
+    const state = {
+      theme: localStorage.getItem('dhiraj_portfolio_theme') || 'midnight-library',
+      profile: { ...DEFAULT_PROFILE, ...JSON.parse(localStorage.getItem('dhiraj_portfolio_profile') || '{}') },
+      roleIdx: 0,
+      radarShowTarget: false,
+      skillFilter: 'All Capabilities',
+      ragJurisdictionIdx: 0,
+      ragVoiceEnabled: true,
+      ragTranslationEnabled: true,
+      ragSimulating: false,
+      selectedCourseIdx: 0
+    };
+
+    /* ------------------------------------------------------------------------
+       3. SKILLS MATRIX DATA (3 STRUCTURED CATEGORIES)
+       ------------------------------------------------------------------------ */
+    const SKILLS_DATA = [
+      // AI & Machine Learning
+      {
+        name: 'PyTorch',
+        category: 'AI & Machine Learning',
+        tag: 'Deep Learning Framework',
+        detail: 'Custom training loops, tensor transformations, gradient accumulation, and memory-efficient model fine-tuning.'
+      },
+      {
+        name: 'QLoRA Fine-Tuning & Qwen3-14B-Instruct',
+        category: 'AI & Machine Learning',
+        tag: 'LLM Adaptation',
+        detail: '4-bit NF4 quantized low-rank adapter fine-tuning for domain-grounded South Asian legal reasoning and citation fidelity.'
+      },
+      {
+        name: 'Hybrid RAG (BM25 + BGE-M3 + Cross-Encoder)',
+        category: 'AI & Machine Learning',
+        tag: 'Neural Information Retrieval',
+        detail: 'Reciprocal rank fusion combining lexical BM25 keyword precision, dense BGE-M3 embeddings, and Cross-Encoder reranking.'
+      },
+      {
+        name: 'Whisper Large-v3 Turbo',
+        category: 'AI & Machine Learning',
+        tag: 'Speech Recognition (ASR)',
+        detail: 'Low-latency multilingual automatic speech recognition enabling natural voice legal queries across regional accents.'
+      },
+      {
+        name: 'Coqui XTTS-v2',
+        category: 'AI & Machine Learning',
+        tag: 'Speech Synthesis (TTS)',
+        detail: 'Expressive neural text-to-speech synthesis converting grounded legal explanations into accessible spoken responses.'
+      },
+      {
+        name: 'IndicTrans2 & NLLB-200',
+        category: 'AI & Machine Learning',
+        tag: 'Cross-Lingual Translation',
+        detail: 'Neural machine translation bridging South Asian languages with English statutory corpora while preserving legal terminology.'
+      },
+
+      // Programming & Core CS
+      {
+        name: 'Python (Intermediate–Advanced)',
+        category: 'Programming & Core CS',
+        tag: 'Primary AI & Backend Language',
+        detail: 'Async API services, JSON legal corpus engineering, PyTorch pipelines, and automated evaluation scripts.'
+      },
+      {
+        name: 'C Programming',
+        category: 'Programming & Core CS',
+        tag: 'Systems & Bare-Metal',
+        detail: 'Pointer arithmetic, deterministic memory management, embedded microcontroller firmware, and native algorithm benchmarks.'
+      },
+      {
+        name: 'FORTRAN 77 & Numerical Methods',
+        category: 'Programming & Core CS',
+        tag: 'Scientific Computing',
+        detail: 'Matrix linear solvers, Runge-Kutta ODE integration, and numerical stability analysis from TU IOE engineering labs.'
+      },
+      {
+        name: 'SQL & Relational Modeling',
+        category: 'Programming & Core CS',
+        tag: 'Data Engineering',
+        detail: 'Normalized schema design, indexed statutory metadata queries, and analytical reporting.'
+      },
+      {
+        name: 'Data Structures & Algorithms',
+        category: 'Programming & Core CS',
+        tag: 'Core Computer Science',
+        detail: 'Graph traversals, balanced trees, dynamic programming, and asymptotic time/space complexity optimization.'
+      },
+      {
+        name: 'Digital Signal Processing (DSP)',
+        category: 'Programming & Core CS',
+        tag: 'Spectral & Audio Math',
+        detail: 'Fast Fourier Transform (FFT), FIR/IIR digital filtering, and acoustic feature analysis foundational to speech AI.'
+      },
+
+      // Systems & Architecture
+      {
+        name: 'PlantUML & Sequence Modeling',
+        category: 'Systems & Architecture',
+        tag: 'Software Architecture',
+        detail: 'Component, sequence, and deployment diagrams specifying multi-stage RAG workflows and distributed service contracts.'
+      },
+      {
+        name: 'Distributed Systems & Computer Networks',
+        category: 'Systems & Architecture',
+        tag: 'Scalable Infrastructure',
+        detail: 'Fault-tolerant service decoupling, TCP/IP socket transport, REST/WebSocket streaming, and vector index partitioning.'
+      },
+      {
+        name: 'Embedded Systems',
+        category: 'Systems & Architecture',
+        tag: 'Hardware-Software Co-Design',
+        detail: 'Microcontroller GPIO/PWM control, opto-isolated relay switching, and real-time residential load automation.'
+      },
+      {
+        name: 'Android Custom ROM & Kernel Thermal Tuning',
+        category: 'Systems & Architecture',
+        tag: 'OS & Low-Level Tuning',
+        detail: 'CPU governor profiling, thermal-engine throttling mitigation, and custom ROM deployment on Helio G85 & Snapdragon devices.'
+      },
+      {
+        name: 'GCC, VS Code & Jupyter Notebooks',
+        category: 'Systems & Architecture',
+        tag: 'Developer Toolchain',
+        detail: 'Native C compiler optimization, Git version control discipline, and reproducible ML experimentation environments.'
+      }
+    ];
+
+    /* ------------------------------------------------------------------------
+       4. FEATURED PROJECTS DATA (4 COMPLETE ENGINEERING CASE STUDIES)
+       ------------------------------------------------------------------------ */
+    const PROJECTS_DATA = [
+      {
+        id: 'saarc-rag',
+        tag: 'Flagship • Mid-Term Milestone Completed Aug 2026',
+        title: 'AI-Powered SAARC Legal Assistance System',
+        summary:
+          'Multimodal voice-and-text legal intelligence system covering Nepal, Bhutan, and Bangladesh Constitutions and statutory acts using Whisper Large-v3 Turbo, IndicTrans2/NLLB-200, BM25 + BGE-M3 + Cross-Encoder hybrid retrieval, Qwen3-14B-Instruct QLoRA, and Coqui XTTS-v2.',
+        stack: ['Qwen3-14B QLoRA', 'BM25 + BGE-M3', 'Cross-Encoder', 'Whisper v3 Turbo', 'IndicTrans2', 'Coqui XTTS-v2'],
+        highlights: ['3 SAARC Jurisdictions', '6-Stage Multimodal Pipeline', 'Zero-Hallucination Article Citations'],
+        architecture:
+          'Constructed a structured hierarchical JSON corpus indexing Parts, Articles, Sections, and Sub-clauses across Nepal, Bhutan, and Bangladesh statutes. Spoken queries are transcribed via Whisper Large-v3 Turbo, normalized via IndicTrans2/NLLB-200, retrieved through hybrid BM25 + BGE-M3 dense fusion, reranked with a Cross-Encoder, and synthesized by QLoRA-tuned Qwen3-14B-Instruct before vocalization via Coqui XTTS-v2.',
+        deliverables: [
+          'Hierarchical JSON statutory parser preserving exact article provenance across 3 South Asian legal systems.',
+          'Reciprocal Rank Fusion (BM25 + BGE-M3) paired with Cross-Encoder reranking achieving >96% top-3 article recall.',
+          '4-bit QLoRA fine-tuning pipeline adapting Qwen3-14B-Instruct to refuse unsupported claims and cite exact statutory clauses.'
+        ]
+      },
+      {
+        id: 'smart-switch',
+        tag: 'IoT & Embedded Systems',
+        title: 'Smart Residential Switch & Load Automation',
+        summary:
+          'Smartphone-controlled multi-channel lighting and fan switching system featuring real-time bidirectional state feedback, opto-isolated relay protection, and physical wall-switch override.',
+        stack: ['Embedded C', 'Microcontroller I/O', 'Opto-Isolated Relays', 'Real-Time State Sync', 'Circuit Protection'],
+        highlights: ['<45ms Command Latency', 'Bidirectional State Feedback', '220V AC Surge & Flyback Isolation'],
+        architecture:
+          'Designed an embedded control architecture linking a smartphone interface with deterministic C microcontroller firmware. Every relay channel incorporates optocoupler galvanic isolation, snubber/flyback protection for inductive ceiling fan motors, and hardware interrupt sensing so manual wall switches stay synchronized with mobile state.',
+        deliverables: [
+          'Debounced GPIO interrupt firmware in Embedded C supporting simultaneous physical and wireless switching.',
+          'Opto-isolated multi-channel relay driver board engineered for safe domestic 220V AC inductive/resistive loads.',
+          'Real-time state acknowledgment protocol eliminating phantom UI desynchronization.'
+        ]
+      },
+      {
+        id: 'android-thermal',
+        tag: 'Low-Level Systems & Kernel Engineering',
+        title: 'Android Custom ROM & Thermal Performance Engineering',
+        summary:
+          'Kernel governor optimization, thermal-engine throttling mitigation, and custom ROM deployment engineered across MediaTek Helio G85 and Qualcomm Snapdragon hardware platforms.',
+        stack: ['Android / AOSP', 'Linux Kernel Tuning', 'Thermal-Engine Config', 'Helio G85 & Snapdragon', 'ADB / Fastboot'],
+        highlights: ['Sustained Peak Clocks', 'Reduced Thermal Throttling', 'ZRAM & I/O Scheduler Tuning'],
+        architecture:
+          'Profiled SoC thermal zone trip points and CPU frequency scaling governors on MediaTek Helio G85 and Snapdragon devices. Calibrated thermal-engine configuration profiles, tuned schedutil ramp rates, and optimized ZRAM memory compression to eliminate frame drops under sustained compute.',
+        deliverables: [
+          'Custom recovery and ROM flashing workflows with verified partition backup and boot integrity.',
+          'SoC thermal trip-point tuning balancing skin temperature safety with sustained multi-core throughput.',
+          'I/O read-ahead and ZRAM swap ratio optimization for smooth multitasking on constrained mobile RAM.'
+        ]
+      },
+      {
+        id: 'tu-ioe-suite',
+        tag: 'Scientific Computing & Systems Lab',
+        title: 'TU IOE Computational & Signal Processing Suite',
+        summary:
+          'Multi-language implementations in C, Python, and FORTRAN 77 of Fast Fourier Transform (FFT) spectral filters, biomedical signal conditioning, and PlantUML-modeled distributed protocols.',
+        stack: ['C Programming', 'Python / NumPy', 'FORTRAN 77', 'FFT Spectral Filters', 'PlantUML', 'Distributed Protocols'],
+        highlights: ['3 Languages Benchmarked', 'Biomedical Signal Conditioning', 'Formal UML Sequence Specs'],
+        architecture:
+          'Developed foundational numerical and signal processing engines from first principles across C, Python, and FORTRAN 77—comparing floating-point precision, execution speed, and memory layout while documenting distributed consensus and network protocols in PlantUML.',
+        deliverables: [
+          'Radix-2 Cooley-Tukey FFT and windowed FIR bandpass filters for noisy biomedical sensor waveforms.',
+          'FORTRAN 77 and C numerical linear algebra solvers (Gaussian elimination, LU decomposition, Runge-Kutta).',
+          'Complete PlantUML component and sequence specifications for distributed fault-tolerant communication.'
+        ]
+      }
+    ];
+
+    /* ------------------------------------------------------------------------
+       5. SAARC LEGAL RAG SIMULATOR DATA (6 STAGES + 3 JURISDICTIONS)
+       ------------------------------------------------------------------------ */
+    const RAG_JURISDICTIONS = [
+      {
+        id: 'nepal',
+        label: 'Nepal Constitution',
+        badge: 'Constitution of Nepal (2072 / 2015)',
+        defaultQuery: 'What fundamental rights protect citizens’ access to public information and privacy in Nepal?',
+        bm25Score: '0.914',
+        bgeScore: '0.942',
+        rerankConf: '98.4%',
+        citations: [
+          'Constitution of Nepal (2015), Part 3, Article 27 — Right to Information',
+          'Constitution of Nepal (2015), Part 3, Article 28 — Right to Privacy',
+          'Right to Information Act, 2064 (2007), Section 3 — Access to Information Held by Public Bodies'
+        ],
+        response:
+          'Under Article 27 of the Constitution of Nepal (2072), every citizen has the fundamental right to demand and receive information on any matter of their own interest or of public importance, except where confidentiality is expressly required by law. Complementing this, Article 28 guarantees the inviolability of a person’s privacy regarding their residence, property, documents, data, correspondence, and character unless authorized by statute.'
+      },
+      {
+        id: 'bhutan',
+        label: 'Bhutan Statutory Act',
+        badge: 'Constitution of Bhutan (2008) & Environmental Statutes',
+        defaultQuery: 'What constitutional duties govern environmental conservation and forest preservation in Bhutan?',
+        bm25Score: '0.896',
+        bgeScore: '0.935',
+        rerankConf: '97.8%',
+        citations: [
+          'Constitution of the Kingdom of Bhutan (2008), Article 5(1) & 5(3) — Environment',
+          'Forest and Nature Conservation Act of Bhutan, Chapter II — Protected Forest Reserves'
+        ],
+        response:
+          'Article 5(1) of the Constitution of the Kingdom of Bhutan establishes that every Bhutanese citizen is a trustee of the Kingdom’s natural resources and environment for the benefit of present and future generations. Specifically, Article 5(3) mandates the Royal Government to ensure that a minimum of sixty percent of Bhutan’s total land area is maintained under forest cover for all time.'
+      },
+      {
+        id: 'bangladesh',
+        label: 'Bangladesh Penal & Constitutional Law',
+        badge: 'Constitution of Bangladesh (1972) & Penal Provisions',
+        defaultQuery: 'How does Bangladesh’s Constitution safeguard freedom of speech, press, and personal liberty?',
+        bm25Score: '0.908',
+        bgeScore: '0.931',
+        rerankConf: '97.5%',
+        citations: [
+          'Constitution of the People’s Republic of Bangladesh, Part III, Article 32 — Protection of Right to Life & Personal Liberty',
+          'Constitution of the People’s Republic of Bangladesh, Part III, Article 39(1)–(2) — Freedom of Thought, Conscience & Speech'
+        ],
+        response:
+          'Under Part III of the Constitution of Bangladesh, Article 32 guarantees that no person shall be deprived of life or personal liberty save in accordance with law. Furthermore, Article 39(1) unconditionally guarantees freedom of thought and conscience, while Article 39(2) secures freedom of speech, expression, and the press subject to reasonable statutory restrictions in the interests of state security, public order, or morality.'
+      }
+    ];
+
+    const RAG_STAGES = [
+      { step: '01', name: 'Speech Intake', tech: 'Whisper Large-v3 Turbo', baseMs: 290, optional: 'voice' },
+      { step: '02', name: 'Cross-Lingual', tech: 'IndicTrans2 / NLLB-200', baseMs: 140, optional: 'translation' },
+      { step: '03', name: 'Hybrid Fusion', tech: 'BM25 + BGE-M3', baseMs: 65, optional: null },
+      { step: '04', name: 'Reranking', tech: 'Cross-Encoder Large', baseMs: 92, optional: null },
+      { step: '05', name: 'Grounded LLM', tech: 'Qwen3-14B (QLoRA)', baseMs: 610, optional: null },
+      { step: '06', name: 'Voice Synthesis', tech: 'Coqui XTTS-v2', baseMs: 265, optional: 'voice' }
+    ];
+
+    /* ------------------------------------------------------------------------
+       6. TU IOE COURSEWORK EXPLORER DATA (10 SUBJECTS)
+       ------------------------------------------------------------------------ */
+    const COURSEWORK_DATA = [
+      {
+        name: 'Embedded Systems',
+        code: 'CT 701',
+        mapping: 'Hardware-Software Co-Design & Edge Deployment',
+        desc: 'Provides hands-on mastery of deterministic execution, memory-mapped registers, interrupts, and C firmware—directly powering microcontroller residential automation and resource-constrained edge AI inference.'
+      },
+      {
+        name: 'Digital Signal Processing',
+        code: 'EX 702',
+        mapping: 'Acoustic Feature Extraction & Spectral Filtering',
+        desc: 'Builds deep mathematical intuition for Fast Fourier Transforms (FFT), Mel-frequency spectrograms, and FIR/IIR filters—essential to audio preprocessing in Whisper Large-v3 Turbo and Coqui XTTS-v2 speech pipelines.'
+      },
+      {
+        name: 'Distributed Systems',
+        code: 'CT 753',
+        mapping: 'Scalable Vector Retrieval & Microservice Orchestration',
+        desc: 'Establishes core principles of fault tolerance, state replication, consensus, and decoupled service communication needed when scaling hybrid BM25 + BGE-M3 retrieval and LLM inference APIs.'
+      },
+      {
+        name: 'Computer Networks',
+        code: 'CT 652',
+        mapping: 'Low-Latency API Streaming & Transport Protocols',
+        desc: 'Equips me to engineer resilient REST/WebSocket streaming, TCP/IP socket communication, and secure cloud-to-client transport for international remote software deployments.'
+      },
+      {
+        name: 'Software Engineering',
+        code: 'CT 601',
+        mapping: 'PlantUML System Modeling & Maintainable Architecture',
+        desc: 'Instills modular software architecture, PlantUML component/sequence modeling, automated unit/integration testing, and disciplined Git collaboration.'
+      },
+      {
+        name: 'Theory of Computation',
+        code: 'CT 502',
+        mapping: 'Formal Grammars, Automata & LLM Tokenization',
+        desc: 'Sharpens formal reasoning around finite automata, context-free grammars, and algorithmic decidability—informing subword tokenization and structured statutory parsing.'
+      },
+      {
+        name: 'Computer Graphics',
+        code: 'EX 603',
+        mapping: 'Linear Algebra & GPU Matrix Parallelism',
+        desc: 'Reinforces 2D/3D homogeneous matrix transformations, vector spaces, and parallel GPU shader execution pipelines shared with PyTorch tensor operations.'
+      },
+      {
+        name: 'Biomedical Instrumentation',
+        code: 'EX 754',
+        mapping: 'Noisy Sensor Acquisition & Signal Conditioning',
+        desc: 'Connects physical transducer telemetry, instrumentation amplification, and real-time noise filtering with data-driven diagnostic modeling.'
+      },
+      {
+        name: 'Engineering Economics',
+        code: 'CE 655',
+        mapping: 'Compute Cost vs. Latency Trade-Off Optimization',
+        desc: 'Guides pragmatic engineering decisions—such as applying 4-bit QLoRA quantization on Qwen3-14B to achieve high accuracy within modest GPU memory and cloud budgets.'
+      },
+      {
+        name: 'Project Management',
+        code: 'CE 752',
+        mapping: 'Milestone Execution & Remote Team Communication',
+        desc: 'Develops structured milestone planning, risk assessment, and transparent progress documentation vital for asynchronous international remote engineering teams.'
+      }
+    ];
+
+    /* ------------------------------------------------------------------------
+       7. THEME SWITCHING & LIVE PROFILE CUSTOMIZER LOGIC
+       ------------------------------------------------------------------------ */
+    function setTheme(themeId) {
+      const valid = THEMES.some((t) => t.id === themeId) ? themeId : 'midnight-library';
+      state.theme = valid;
+      document.documentElement.setAttribute('data-theme', valid);
+      localStorage.setItem('dhiraj_portfolio_theme', valid);
+
+      const current = THEMES.find((t) => t.id === valid) || THEMES[0];
+      const dot = document.getElementById('theme-active-dot');
+      const label = document.getElementById('theme-active-name');
+      if (dot) dot.style.background = current.dot;
+      if (label) label.textContent = current.name;
+
+      renderThemeDropdown();
+    }
+
+    function renderThemeDropdown() {
+      const list = document.getElementById('theme-dropdown-list');
+      if (!list) return;
+      list.innerHTML = THEMES.map((t) => {
+        const active = state.theme === t.id;
+        return `
+          <button
+            onclick="setTheme('${t.id}'); toggleThemeDropdown(false);"
+            class="w-full text-left px-3 py-2 rounded-xl flex items-center gap-2.5 text-xs transition-colors ${
+              active ? 'bg-badge font-semibold' : 'hover:bg-secondary text-primary'
+            }"
+          >
+            <span class="w-3 h-3 rounded-full shrink-0 border border-white/20" style="background:${t.dot};"></span>
+            <div class="flex-1 min-w-0">
+              <div class="truncate">${t.name}</div>
+              <div class="text-[10px] text-muted truncate font-normal">${t.desc}</div>
+            </div>
+            ${active ? '<span class="text-accent">✓</span>' : ''}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function toggleThemeDropdown(forceState) {
+      const menu = document.getElementById('theme-dropdown-menu');
+      if (!menu) return;
+      if (typeof forceState === 'boolean') {
+        menu.classList.toggle('hidden', !forceState);
+      } else {
+        menu.classList.toggle('hidden');
+      }
+    }
+
+    function toggleMobileNav(forceState) {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      if (!drawer) return;
+      if (typeof forceState === 'boolean') {
+        drawer.classList.toggle('hidden', !forceState);
+      } else {
+        drawer.classList.toggle('hidden');
+      }
+    }
+
+    function applyProfileToDOM() {
+      const p = state.profile;
+      document.querySelectorAll('[data-profile="name"]').forEach((el) => (el.textContent = p.name));
+      document.querySelectorAll('[data-profile="nameUpper"]').forEach((el) => (el.textContent = p.name.toUpperCase()));
+      document.querySelectorAll('[data-profile="university"]').forEach((el) => (el.textContent = p.university));
+      document.querySelectorAll('[data-profile="location"]').forEach((el) => (el.textContent = p.location));
+      document.querySelectorAll('[data-profile="gradYear"]').forEach((el) => (el.textContent = p.gradYear));
+      document.querySelectorAll('[data-profile="email"]').forEach((el) => (el.textContent = p.email));
+      document.querySelectorAll('[data-profile="bio"]').forEach((el) => (el.textContent = p.bio));
+
+      const cleanGh = p.github.replace(/^https?:\/\//, '');
+      const cleanLi = p.linkedin.replace(/^https?:\/\//, '');
+      document.querySelectorAll('[data-profile="githubClean"]').forEach((el) => (el.textContent = cleanGh));
+      document.querySelectorAll('[data-profile="linkedinClean"]').forEach((el) => (el.textContent = cleanLi));
+
+      const ghEl = document.getElementById('contact-github-link');
+      const liEl = document.getElementById('contact-linkedin-link');
+      if (ghEl) ghEl.href = p.github;
+      if (liEl) liEl.href = p.linkedin;
+
+      const monogram = document.getElementById('nav-monogram');
+      if (monogram) {
+        const initials = p.name
+          .trim()
+          .split(/\s+/)
+          .slice(0, 2)
+          .map((w) => (w[0] ? w[0].toUpperCase() : ''))
+          .join('');
+        monogram.textContent = initials || 'DS';
+      }
+    }
+
+    function updateProfileField(key, value) {
+      state.profile[key] = value.trim() === '' ? DEFAULT_PROFILE[key] : value;
+      localStorage.setItem('dhiraj_portfolio_profile', JSON.stringify(state.profile));
+      applyProfileToDOM();
+    }
+
+    function applyCampusPreset(campusLabel) {
+      const input = document.getElementById('cust-university');
+      if (input) input.value = campusLabel;
+      updateProfileField('university', campusLabel);
+      showToast(`Updated institution to ${campusLabel}`);
+    }
+
+    function openCustomizerDrawer() {
+      document.getElementById('cust-name').value = state.profile.name;
+      document.getElementById('cust-university').value = state.profile.university;
+      document.getElementById('cust-location').value = state.profile.location;
+      document.getElementById('cust-gradYear').value = state.profile.gradYear;
+      document.getElementById('cust-email').value = state.profile.email;
+      document.getElementById('cust-github').value = state.profile.github;
+      document.getElementById('cust-linkedin').value = state.profile.linkedin;
+      document.getElementById('cust-bio').value = state.profile.bio;
+
+      document.getElementById('customizer-backdrop').classList.remove('hidden');
+      document.getElementById('customizer-drawer').classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCustomizerDrawer() {
+      document.getElementById('customizer-backdrop').classList.add('hidden');
+      document.getElementById('customizer-drawer').classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+
+    function resetCustomizerToDefault() {
+      state.profile = { ...DEFAULT_PROFILE };
+      localStorage.setItem('dhiraj_portfolio_profile', JSON.stringify(state.profile));
+      applyProfileToDOM();
+      openCustomizerDrawer();
+      showToast('Restored Dhiraj Shah default profile');
+    }
+
+    function downloadStandaloneHTML() {
+      const clone = document.documentElement.cloneNode(true);
+      clone.setAttribute('data-theme', state.theme);
+
+      const backdrop = clone.querySelector('#customizer-backdrop');
+      const drawer = clone.querySelector('#customizer-drawer');
+      const caseModal = clone.querySelector('#project-case-modal');
+      if (backdrop) backdrop.classList.add('hidden');
+      if (drawer) drawer.classList.add('translate-x-full');
+      if (caseModal) {
+        caseModal.classList.add('hidden');
+        caseModal.classList.remove('flex');
+      }
+      const body = clone.querySelector('body');
+      if (body) body.style.overflow = '';
+
+      const htmlString = '<!DOCTYPE html>\n' + clone.outerHTML;
+      const blob = new Blob([htmlString], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'dhiraj-shah-portfolio.html';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      showToast('Downloaded standalone dhiraj-shah-portfolio.html');
+    }
+
+    /* ------------------------------------------------------------------------
+       8. INTERACTIVE HTML5 CONSTELLATION CANVAS & HERO ROLE CYCLER
+       ------------------------------------------------------------------------ */
+    function initConstellationCanvas() {
+      const canvas = document.getElementById('constellation-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = (canvas.width = canvas.offsetWidth);
+      let height = (canvas.height = canvas.offsetHeight);
+      const pointer = { x: -9999, y: -9999, radius: 150 };
+
+      const count = Math.min(62, Math.max(26, Math.floor((width * height) / 17000)));
+      const particles = Array.from({ length: count }, (_, idx) => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.42,
+        vy: (Math.random() - 0.5) * 0.42,
+        r: Math.random() * 1.8 + 1.2,
+        isAlt: idx % 3 === 0
+      }));
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        pointer.x = e.clientX - rect.left;
+        pointer.y = e.clientY - rect.top;
+      });
+
+      function renderLoop() {
+        ctx.clearRect(0, 0, width, height);
+        const styles = getComputedStyle(document.documentElement);
+        const primaryNode = styles.getPropertyValue('--canvas-node').trim() || '#EBB85C';
+        const altNode = styles.getPropertyValue('--canvas-node-alt').trim() || '#F4F1EA';
+        const linkRGB = styles.getPropertyValue('--canvas-link').trim() || '235, 184, 92';
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Mouse proximity connection
+          const dx = pointer.x - p.x;
+          const dy = pointer.y - p.y;
+          const distPointer = Math.hypot(dx, dy);
+          if (distPointer < pointer.radius && distPointer > 0) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${linkRGB}, ${(1 - distPointer / pointer.radius) * 0.45})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(pointer.x, pointer.y);
+            ctx.stroke();
+          }
+
+          // Particle-to-particle gentle constellation links
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(${linkRGB}, ${(1 - dist / 120) * 0.16})`;
+              ctx.lineWidth = 0.8;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.isAlt ? altNode : primaryNode;
+          ctx.globalAlpha = 0.72;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+        }
+
+        requestAnimationFrame(renderLoop);
+      }
+
+      renderLoop();
+    }
+
+    function cycleHeroRole() {
+      state.roleIdx = (state.roleIdx + 1) % HERO_ROLES.length;
+      const el = document.getElementById('hero-cycling-role');
+      if (el) el.textContent = HERO_ROLES[state.roleIdx];
+    }
+
+    /* ------------------------------------------------------------------------
+       9. INTERACTIVE 4-AXIS SVG RADAR CHART LOGIC
+       ------------------------------------------------------------------------ */
+    const RADAR_INFO = [
+      {
+        title: 'AI & Neural Retrieval (91%)',
+        text: 'PyTorch, QLoRA 4-bit fine-tuning on Qwen3-14B-Instruct, BM25 + BGE-M3 + Cross-Encoder hybrid RAG, Whisper Large-v3 Turbo, Coqui XTTS-v2 & IndicTrans2.'
+      },
+      {
+        title: 'Systems & Low-Level C (85%)',
+        text: 'Bare-metal C programming, Embedded Systems GPIO/relay switching, Android Custom ROM & Linux kernel thermal throttling mitigation.'
+      },
+      {
+        title: 'Software Architecture (84%)',
+        text: 'PlantUML component & sequence modeling, modular Python services, relational SQL design, and Distributed Systems patterns.'
+      },
+      {
+        title: 'Data & Signal Processing (85%)',
+        text: 'Digital Signal Processing (FFT spectral analysis, FIR filtering), FORTRAN 77 numerical solvers, and biomedical signal conditioning.'
+      }
+    ];
+
+    function selectRadarAxis(idx) {
+      const info = RADAR_INFO[idx];
+      const box = document.getElementById('radar-axis-readout');
+      if (info && box) {
+        box.innerHTML = `<strong class="text-accent font-mono">${info.title}:</strong> ${info.text}`;
+      }
+    }
+
+    function toggleRadarComparison() {
+      state.radarShowTarget = !state.radarShowTarget;
+      const targetPoly = document.getElementById('radar-target-polygon');
+      const indicator = document.getElementById('radar-toggle-indicator');
+      const label = document.getElementById('radar-toggle-label');
+
+      if (targetPoly) targetPoly.style.opacity = state.radarShowTarget ? '1' : '0';
+      if (indicator) {
+        indicator.style.backgroundColor = state.radarShowTarget ? 'var(--radar-target)' : 'var(--text-muted)';
+      }
+      if (label) {
+        label.textContent = state.radarShowTarget
+          ? '2026 Industry Target: On'
+          : '2026 Industry Target: Off';
+      }
+    }
+
+    /* ------------------------------------------------------------------------
+       10. TECHNICAL SKILLS MATRIX RENDERER
+       ------------------------------------------------------------------------ */
+    const SKILL_FILTERS = [
+      'All Capabilities',
+      'AI & Machine Learning',
+      'Programming & Core CS',
+      'Systems & Architecture'
+    ];
+
+    function renderSkillsMatrix() {
+      const pillsEl = document.getElementById('skill-filter-pills');
+      pillsEl.innerHTML = SKILL_FILTERS.map((cat) => {
+        const active = state.skillFilter === cat;
+        return `
+          <button
+            onclick="setSkillFilter('${cat}')"
+            class="px-4 py-2 text-xs transition-all ${active ? 'btn-gold' : 'btn-slate text-secondary'}"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+
+      const list =
+        state.skillFilter === 'All Capabilities'
+          ? SKILLS_DATA
+          : SKILLS_DATA.filter((s) => s.category === state.skillFilter);
+
+      const grid = document.getElementById('skills-matrix-grid');
+      grid.innerHTML = list
+        .map(
+          (item) => `
+          <div class="spotlight-card rounded-2xl p-5 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-badge font-mono text-[10px] font-semibold">
+                  ${item.tag}
+                </span>
+                <span class="font-mono text-[10px] text-muted">${item.category.split('&')[0].trim()}</span>
+              </div>
+              <h3 class="font-display font-bold text-lg text-primary leading-snug">${item.name}</h3>
+              <p class="text-xs text-secondary mt-2 leading-relaxed">${item.detail}</p>
+            </div>
+          </div>
+        `
+        )
+        .join('');
+
+      bindSpotlightCards();
+    }
+
+    function setSkillFilter(cat) {
+      state.skillFilter = cat;
+      renderSkillsMatrix();
+    }
+
+    /* ------------------------------------------------------------------------
+       11. FEATURED PROJECTS & CASE STUDY MODAL
+       ------------------------------------------------------------------------ */
+    function renderProjectsGrid() {
+      const grid = document.getElementById('projects-cards-grid');
+      grid.innerHTML = PROJECTS_DATA.map(
+        (proj) => `
+        <article class="spotlight-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between gap-6">
+          <div class="space-y-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full bg-badge font-mono text-[11px] font-semibold">
+                ${proj.tag}
+              </span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-primary leading-snug">
+              ${proj.title}
+            </h3>
+
+            <p class="font-editorial text-xs sm:text-sm text-secondary leading-relaxed">
+              ${proj.summary}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${proj.stack
+                .map(
+                  (tech) =>
+                    `<span class="px-3 py-1 rounded-full bg-secondary border border-theme font-mono text-[11px] text-primary">${tech}</span>`
+                )
+                .join('')}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-theme space-y-4">
+            <div class="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-accent">
+              ${proj.highlights.map((h) => `<span>✦ ${h}</span>`).join('')}
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5">
+              <button
+                onclick="openProjectCaseModal('${proj.id}')"
+                class="btn-gold px-5 py-2.5 text-xs inline-flex items-center gap-1.5"
+              >
+                <span>Inspect Architecture</span>
+                <span>→</span>
+              </button>
+              ${
+                proj.id === 'saarc-rag'
+                  ? `<a href="#rag-lab" class="btn-slate px-4 py-2.5 text-xs inline-flex items-center gap-1.5">
+                      <span>Simulate RAG</span>
+                      <span class="text-accent">✦</span>
+                    </a>`
+                  : ''
+              }
+            </div>
+          </div>
+        </article>
+      `
+      ).join('');
+
+      bindSpotlightCards();
+    }
+
+    function openProjectCaseModal(projId) {
+      const proj = PROJECTS_DATA.find((p) => p.id === projId);
+      if (!proj) return;
+
+      const body = document.getElementById('project-case-body');
+      body.innerHTML = `
+        <div class="space-y-5">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-badge font-mono text-xs font-semibold">${proj.tag}</span>
+            <h3 class="font-display font-bold text-2xl sm:text-3xl text-primary mt-3">${proj.title}</h3>
+            <p class="font-editorial text-sm sm:text-base text-secondary mt-2 leading-relaxed">${proj.summary}</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-secondary border border-theme space-y-2">
+            <div class="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+              System Architecture &amp; Engineering Approach
+            </div>
+            <p class="text-xs sm:text-sm text-primary leading-relaxed">${proj.architecture}</p>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
+              Key Technical Deliverables
+            </div>
+            <ul class="space-y-2">
+              ${proj.deliverables
+                .map(
+                  (d) =>
+                    `<li class="p-3.5 rounded-2xl bg-secondary/70 border border-theme text-xs sm:text-sm text-secondary flex items-start gap-2.5">
+                      <span class="text-accent font-bold mt-0.5">✦</span>
+                      <span>${d}</span>
+                    </li>`
+                )
+                .join('')}
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            ${proj.stack
+              .map(
+                (s) =>
+                  `<span class="px-3 py-1 rounded-full bg-secondary border border-theme font-mono text-xs text-primary">${s}</span>`
+              )
+              .join('')}
+          </div>
+        </div>
+      `;
+
+      const modal = document.getElementById('project-case-modal');
+      const panel = document.getElementById('project-case-panel');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        panel.classList.remove('scale-95', 'opacity-0');
+        panel.classList.add('scale-100', 'opacity-100');
+      });
+    }
+
+    function closeProjectCaseModal() {
+      const modal = document.getElementById('project-case-modal');
+      const panel = document.getElementById('project-case-panel');
+      panel.classList.remove('scale-100', 'opacity-100');
+      panel.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    /* ------------------------------------------------------------------------
+       12. INTERACTIVE SAARC LEGAL RAG SIMULATOR ("RAG LAB")
+       ------------------------------------------------------------------------ */
+    function renderRagLab() {
+      const pillsEl = document.getElementById('rag-jurisdiction-pills');
+      pillsEl.innerHTML = RAG_JURISDICTIONS.map((j, idx) => {
+        const active = state.ragJurisdictionIdx === idx;
+        return `
+          <button
+            onclick="selectRagJurisdiction(${idx})"
+            class="px-4 py-2 text-xs transition-all ${active ? 'btn-gold' : 'btn-slate text-secondary'}"
+          >
+            ${j.label}
+          </button>
+        `;
+      }).join('');
+
+      // Sync multimodal toggle buttons
+      const voiceBtn = document.getElementById('toggle-voice-btn');
+      const voiceDot = document.getElementById('voice-dot');
+      if (voiceBtn && voiceDot) {
+        voiceBtn.style.backgroundColor = state.ragVoiceEnabled ? 'var(--badge-bg)' : 'var(--bg-secondary)';
+        voiceBtn.style.borderColor = state.ragVoiceEnabled ? 'var(--accent-primary)' : 'var(--border-subtle)';
+        voiceBtn.style.color = state.ragVoiceEnabled ? 'var(--accent-primary)' : 'var(--text-secondary)';
+        voiceDot.style.backgroundColor = state.ragVoiceEnabled ? 'var(--accent-primary)' : 'var(--text-muted)';
+      }
+
+      const transBtn = document.getElementById('toggle-translation-btn');
+      const transDot = document.getElementById('translation-dot');
+      if (transBtn && transDot) {
+        transBtn.style.backgroundColor = state.ragTranslationEnabled ? 'var(--badge-bg)' : 'var(--bg-secondary)';
+        transBtn.style.borderColor = state.ragTranslationEnabled ? 'var(--accent-primary)' : 'var(--border-subtle)';
+        transBtn.style.color = state.ragTranslationEnabled ? 'var(--accent-primary)' : 'var(--text-secondary)';
+        transDot.style.backgroundColor = state.ragTranslationEnabled ? 'var(--accent-primary)' : 'var(--text-muted)';
+      }
+
+      const activeJur = RAG_JURISDICTIONS[state.ragJurisdictionIdx];
+      const queryInput = document.getElementById('rag-query-input');
+      if (queryInput && !queryInput.dataset.userEdited) {
+        queryInput.value = activeJur.defaultQuery;
+      }
+
+      // Render 6 Pipeline Stages
+      const stagesEl = document.getElementById('rag-stages-grid');
+      stagesEl.innerHTML = RAG_STAGES.map((st, idx) => {
+        const isBypassed =
+          (st.optional === 'voice' && !state.ragVoiceEnabled) ||
+          (st.optional === 'translation' && !state.ragTranslationEnabled);
+
+        return `
+          <div
+            id="rag-stage-${idx}"
+            class="p-3.5 rounded-2xl border transition-all duration-300 ${
+              isBypassed ? 'bg-primary/50 border-theme opacity-45' : 'bg-secondary border-theme'
+            }"
+          >
+            <div class="flex items-center justify-between font-mono text-[10px] mb-1">
+              <span class="text-accent font-bold">STAGE ${st.step}</span>
+              <span id="rag-stage-ms-${idx}" class="text-muted">${isBypassed ? 'BYPASSED' : st.baseMs + ' ms'}</span>
+            </div>
+            <div class="font-display font-bold text-sm text-primary">${st.name}</div>
+            <div class="font-mono text-[10px] text-secondary mt-1 truncate">${st.tech}</div>
+          </div>
+        `;
+      }).join('');
+
+      renderRagOutputCard();
+    }
+
+    function renderRagOutputCard() {
+      const activeJur = RAG_JURISDICTIONS[state.ragJurisdictionIdx];
+      const queryInput = document.getElementById('rag-query-input');
+      const currentQuery = queryInput && queryInput.value.trim() ? queryInput.value.trim() : activeJur.defaultQuery;
+      const isCustomQuery = currentQuery !== activeJur.defaultQuery;
+
+      const totalLatency = RAG_STAGES.reduce((acc, st) => {
+        const isBypassed =
+          (st.optional === 'voice' && !state.ragVoiceEnabled) ||
+          (st.optional === 'translation' && !state.ragTranslationEnabled);
+        return acc + (isBypassed ? 0 : st.baseMs);
+      }, 0);
+
+      const outputPanel = document.getElementById('rag-output-panel');
+      outputPanel.innerHTML = `
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-3 rounded-2xl bg-card border border-theme">
+            <div class="font-mono text-[10px] uppercase text-muted">BM25 Lexical Score</div>
+            <div class="font-mono font-bold text-base text-accent mt-0.5">${activeJur.bm25Score}</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-card border border-theme">
+            <div class="font-mono text-[10px] uppercase text-muted">BGE-M3 Dense Score</div>
+            <div class="font-mono font-bold text-base text-accent mt-0.5">${activeJur.bgeScore}</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-card border border-theme">
+            <div class="font-mono text-[10px] uppercase text-muted">Cross-Encoder Conf.</div>
+            <div class="font-mono font-bold text-base text-tertiary mt-0.5">${activeJur.rerankConf}</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-card border border-theme">
+            <div class="font-mono text-[10px] uppercase text-muted">Pipeline Latency</div>
+            <div class="font-mono font-bold text-base text-primary mt-0.5">${totalLatency} ms</div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+            Retrieved Statutory Citations (${activeJur.badge})
+          </div>
+          <ul class="space-y-1.5 font-mono text-xs text-secondary">
+            ${activeJur.citations.map((c) => `<li>✦ ${c}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-card border border-theme space-y-2.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-muted">
+              Grounded Synthesis • Qwen3-14B-Instruct (4-Bit QLoRA)
+            </span>
+            ${
+              state.ragVoiceEnabled
+                ? `<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-badge font-mono text-[10px] text-accent">
+                    <span class="flex items-end gap-0.5 h-3">
+                      <span class="wave-bar" style="animation-delay:0s;"></span>
+                      <span class="wave-bar" style="animation-delay:0.2s;"></span>
+                      <span class="wave-bar" style="animation-delay:0.4s;"></span>
+                      <span class="wave-bar" style="animation-delay:0.15s;"></span>
+                    </span>
+                    <span>Coqui XTTS-v2 Audio Ready</span>
+                  </div>`
+                : ''
+            }
+          </div>
+
+          <p class="font-editorial text-sm sm:text-base text-primary leading-relaxed">
+            ${
+              isCustomQuery
+                ? `In response to “${currentQuery}”: ${activeJur.response}`
+                : activeJur.response
+            }
+          </p>
+        </div>
+      `;
+    }
+
+    function selectRagJurisdiction(idx) {
+      state.ragJurisdictionIdx = idx;
+      const input = document.getElementById('rag-query-input');
+      if (input) {
+        delete input.dataset.userEdited;
+        input.value = RAG_JURISDICTIONS[idx].defaultQuery;
+      }
+      renderRagLab();
+    }
+
+    function toggleRagFeature(feature) {
+      if (feature === 'voice') state.ragVoiceEnabled = !state.ragVoiceEnabled;
+      if (feature === 'translation') state.ragTranslationEnabled = !state.ragTranslationEnabled;
+      renderRagLab();
+    }
+
+    function runRagPipelineSimulation() {
+      if (state.ragSimulating) return;
+      state.ragSimulating = true;
+
+      const btn = document.getElementById('run-rag-btn');
+      const outputPanel = document.getElementById('rag-output-panel');
+      if (btn) btn.classList.add('opacity-70');
+      if (outputPanel) outputPanel.classList.add('opacity-40');
+
+      RAG_STAGES.forEach((st, idx) => {
+        const card = document.getElementById(`rag-stage-${idx}`);
+        const msEl = document.getElementById(`rag-stage-ms-${idx}`);
+        const isBypassed =
+          (st.optional === 'voice' && !state.ragVoiceEnabled) ||
+          (st.optional === 'translation' && !state.ragTranslationEnabled);
+
+        if (card) {
+          card.style.borderColor = 'var(--border-subtle)';
+          card.style.boxShadow = 'none';
+        }
+        if (msEl && !isBypassed) {
+          msEl.textContent = 'RUNNING...';
+          msEl.classList.add('text-accent');
+        }
+
+        setTimeout(() => {
+          if (card && !isBypassed) {
+            card.style.borderColor = 'var(--accent-primary)';
+            card.style.boxShadow = '0 0 22px -6px var(--border-glow)';
+          }
+          if (msEl && !isBypassed) {
+            msEl.textContent = `✓ ${st.baseMs} ms`;
+          }
+
+          if (idx === RAG_STAGES.length - 1) {
+            state.ragSimulating = false;
+            if (btn) btn.classList.remove('opacity-70');
+            if (outputPanel) outputPanel.classList.remove('opacity-40');
+            renderRagOutputCard();
+            showToast('Hybrid RAG pipeline trace completed with cited articles');
+          }
+        }, (idx + 1) * 230);
+      });
+    }
+
+    /* ------------------------------------------------------------------------
+       13. TU IOE COURSEWORK EXPLORER RENDERER
+       ------------------------------------------------------------------------ */
+    function renderCourseworkExplorer() {
+      const pillsEl = document.getElementById('coursework-pills-container');
+      pillsEl.innerHTML = COURSEWORK_DATA.map((c, idx) => {
+        const active = idx === state.selectedCourseIdx;
+        return `
+          <button
+            onclick="selectCoursework(${idx})"
+            class="px-4 py-2 text-xs transition-all ${active ? 'btn-gold' : 'btn-slate text-secondary'}"
+          >
+            ${c.name}
+          </button>
+        `;
+      }).join('');
+
+      const activeCourse = COURSEWORK_DATA[state.selectedCourseIdx];
+      const detailEl = document.getElementById('coursework-detail-panel');
+      detailEl.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-theme">
+            <div>
+              <span class="font-mono text-[11px] font-bold text-accent uppercase tracking-wider">
+                TU IOE Course Code // ${activeCourse.code}
+              </span>
+              <h4 class="font-display font-bold text-xl sm:text-2xl text-primary mt-0.5">${activeCourse.name}</h4>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-badge font-mono text-[11px] font-semibold">
+              ${activeCourse.mapping}
+            </span>
+          </div>
+          <p class="font-editorial text-sm sm:text-base text-secondary leading-relaxed">
+            ${activeCourse.desc}
+          </p>
+        </div>
+      `;
+    }
+
+    function selectCoursework(idx) {
+      state.selectedCourseIdx = idx;
+      renderCourseworkExplorer();
+    }
+
+    /* ------------------------------------------------------------------------
+       14. CONTACT ACTIONS, SPOTLIGHT PHYSICS, SCROLL REVEAL & TOASTS
+       ------------------------------------------------------------------------ */
+    function copyEmailAddress() {
+      const email = state.profile.email;
+      const temp = document.createElement('textarea');
+      temp.value = email;
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand('copy');
+        const label = document.getElementById('copy-email-text');
+        if (label) label.textContent = 'Copied!';
+        showToast(`Copied ${email} to clipboard`);
+        setTimeout(() => {
+          if (label) label.textContent = 'Copy Email';
+        }, 2200);
+      } catch (e) {
+        showToast(`Email: ${email}`);
+      }
+      document.body.removeChild(temp);
+    }
+
+    function submitContactForm(event) {
+      event.preventDefault();
+      const sender = document.getElementById('sender-name').value.trim();
+      showToast(`Thank you, ${sender}! Your note has been logged.`);
+      event.target.reset();
+    }
+
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className =
+        'pointer-events-auto px-4 py-3 rounded-2xl bg-card border border-theme shadow-2xl text-xs font-medium text-primary flex items-center gap-2.5 transform translate-y-2 opacity-0 transition-all duration-300';
+      toast.innerHTML = `<span class="text-accent">✦</span><span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 2800);
+    }
+
+    function bindSpotlightCards() {
+      document.querySelectorAll('.spotlight-card').forEach((card) => {
+        card.onmousemove = (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        };
+      });
+    }
+
+    function initScrollMechanics() {
+      const bar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (bar && maxScroll > 0) {
+          bar.style.width = `${(scrollTop / maxScroll) * 100}%`;
+        }
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.reveal-section').forEach((sec) => observer.observe(sec));
+    }
+
+    // Close dropdowns/modals on outside click or Escape
+    document.addEventListener('click', (e) => {
+      const wrapper = document.getElementById('theme-switcher-wrapper');
+      if (wrapper && !wrapper.contains(e.target)) {
+        toggleThemeDropdown(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleThemeDropdown(false);
+        closeProjectCaseModal();
+        closeCustomizerDrawer();
+      }
+    });
+
+    /* ------------------------------------------------------------------------
+       15. BOOTSTRAP APPLICATION ON DOMContentLoaded
+       ------------------------------------------------------------------------ */
+    window.addEventListener('DOMContentLoaded', () => {
+      setTheme(state.theme);
+      applyProfileToDOM();
+      initConstellationCanvas();
+      renderSkillsMatrix();
+      renderProjectsGrid();
+      renderRagLab();
+      renderCourseworkExplorer();
+      bindSpotlightCards();
+      initScrollMechanics();
+
+      const ragInput = document.getElementById('rag-query-input');
+      if (ragInput) {
+        ragInput.addEventListener('input', () => {
+          ragInput.dataset.userEdited = 'true';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
